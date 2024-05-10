@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradiente_fondo">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/tindnet_1">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BIENVENIDO A TINDNET"
+            android:textColor="@color/principal"
+            android:fontFamily="@font/zen_dots"
+            android:textSize="40sp"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="250dp"
+            android:layout_marginRight="16dp"/>
+
+        <Button
+            android:id="@+id/buttonRegistrate"
+            android:layout_width="229dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="420dp"
+            android:layout_marginRight="86dp"
+            android:backgroundTint="@color/secundario"
+            android:fontFamily="@font/open_sans"
+            android:onClick="abrirLoginActivity"
+            android:text="Regístrate"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/buttonIniciaSesion"
+            android:layout_width="229dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="500dp"
+            android:layout_marginRight="86dp"
+            android:text="Iniciar sesión"
+            android:fontFamily="@font/open_sans"
+            android:backgroundTint="@color/secundario"
+            android:textSize="30sp"/>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

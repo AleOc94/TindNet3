@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradiente_fondo">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/tindnet_1" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registro"
+            android:textColor="@color/principal"
+            android:fontFamily="@font/zen_dots"
+            android:textSize="35sp"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="200dp"
+            android:layout_marginRight="16dp"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Eres empresa o cliente?"
+            android:textColor="@color/principal"
+            android:fontFamily="@font/zen_dots"
+            android:textSize="26sp"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="300dp"/>
+
+        <Button
+            android:id="@+id/buttonEmpresa"
+            android:layout_width="229dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="450dp"
+            android:layout_marginRight="86dp"
+            android:backgroundTint="@color/secundario"
+            android:fontFamily="@font/open_sans"
+            android:onClick="abrirLoginEmpresa"
+            android:text="Empresa"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/buttonCliente"
+            android:layout_width="229dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="550dp"
+            android:layout_marginRight="86dp"
+            android:backgroundTint="@color/secundario"
+            android:fontFamily="@font/open_sans"
+            android:onClick="abrirLoginCliente"
+            android:text="Cliente"
+            android:textSize="30sp" />
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

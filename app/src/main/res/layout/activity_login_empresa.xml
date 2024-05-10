@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginEmpresa">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradiente_fondo">
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/tindnet_1" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registro Empresa"
+            android:textColor="@color/principal"
+            android:fontFamily="@font/zen_dots"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="200dp"
+            android:layout_marginRight="10dp" />
+
+        <EditText
+            android:id="@+id/editTextNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="16"
+            android:inputType="text"
+            android:hint="Nombre de empresa"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="250dp"
+            android:fontFamily="@font/zen_dots"
+            android:textSize="16sp"
+            android:background="@color/principal"
+            />
+
+        <EditText
+            android:id="@+id/editNif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="300dp"
+            android:background="@color/principal"
+            android:ems="10"
+            android:fontFamily="@font/zen_dots"
+            android:hint="NIF"
+            android:inputType="text"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextTextEmailAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="25"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="350dp"
+            android:fontFamily="@font/zen_dots"
+            android:textSize="16sp"
+            android:background="@color/principal"/>
+
+        <EditText
+            android:id="@+id/editContrasena"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="25"
+            android:inputType="textPassword|textVisiblePassword"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            android:hint="Contraseña"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="400dp"
+            android:fontFamily="@font/zen_dots"
+            android:textSize="16sp"
+            android:background="@color/principal"/>
+
+
+        <Button
+            android:id="@+id/buttonContinuar"
+            android:layout_width="229dp"
+            android:layout_height="wrap_content"
+            android:text="Continuar"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="500dp"
+            android:layout_marginRight="86dp"
+            android:backgroundTint="@color/secundario"
+            android:fontFamily="@font/open_sans"
+            android:textSize="30sp"/>
+
+
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
