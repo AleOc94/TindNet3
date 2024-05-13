@@ -26,15 +26,13 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 public class LoginCliente extends AppCompatActivity {
-    private static final String TAG="LoginCliente";
+    private static final String TAG = "LoginCliente";
     private EditText editTextName, editTextEmail, editTextPassword;
 
     private Button botonRegistrarCliente;
     private FirebaseAuth mAuth;
 
     private DatabaseReference mDatabase;
-
-
 
 
     // Constante para indicar el tipo de usuario
@@ -64,12 +62,12 @@ public class LoginCliente extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-            // Obtención de los datos de los EditTexts
+                // Obtención de los datos de los EditTexts
                 String name = editTextName.getText().toString();
                 String email = editTextEmail.getText().toString();
                 String password = editTextPassword.getText().toString();
 
-            // Llamada al método createUserWithEmailAndPassword con los datos obtenidos
+                // Llamada al método createUserWithEmailAndPassword con los datos obtenidos
                 createUserWithEmailAndPassword(email, password);
                 guardarDatosClienteEnFirebase(name, email);
 
@@ -89,6 +87,7 @@ public class LoginCliente extends AppCompatActivity {
         usersRef.child("email").setValue(email);
         usersRef.child("tipo").setValue("cliente"); // Añadir el tipo de usuario como "cliente"
     }
+
     private void createUserWithEmailAndPassword(String email, String password) {
         // Verificar si la contraseña cumple con los requisitos
         if (password.length() < 6 || password.length() > 20) {
@@ -110,10 +109,10 @@ public class LoginCliente extends AppCompatActivity {
                     SignInMethodQueryResult result = task.getResult();
                     assert result != null;
                     if (result.getSignInMethods() != null && result.getSignInMethods().size() > 0) {
-                    // El correo electrónico ya está registrado
+                        // El correo electrónico ya está registrado
                         Toast.makeText(LoginCliente.this, "El correo electrónico ya está registrado. Por favor, inicia sesión.", Toast.LENGTH_SHORT).show();
                     } else {
-                    // El correo electrónico no está registrado, procede con la creación de usuario
+                        // El correo electrónico no está registrado, procede con la creación de usuario
                         mAuth.createUserWithEmailAndPassword(email, password)
                                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                     @Override
@@ -125,7 +124,7 @@ public class LoginCliente extends AppCompatActivity {
                                             String userId = user.getUid();
 
 
-                                        // Creación de usuario exitosa
+                                            // Creación de usuario exitosa
                                             Log.d(TAG, "createUserWithEmail:success");
                                             FirebaseUser currentUser = mAuth.getCurrentUser();
 
@@ -163,24 +162,27 @@ public class LoginCliente extends AppCompatActivity {
             }
         });
     }
+
     private void updateUI(FirebaseUser user) {
 // Aquí puedes actualizar la interfaz de usuario según el estado de autenticación
 // Por ejemplo, puedes redirigir al usuario a otra actividad después de que haya iniciado sesión correctamente
         if (user != null) {
-            Intent intent = new Intent (this, MainActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             //Intent intent = new Intent(LoginCliente.this, MainActivity.class); //Cambiarlo por la página siguiente
             startActivity(intent);
             finish();
         }
     }
+
     @Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
+        if (currentUser != null) {
             currentUser.reload();
         }
     }
 }
+
 

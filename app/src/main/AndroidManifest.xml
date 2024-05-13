@@ -13,9 +13,17 @@
         android:theme="@style/Theme.TindNet"
         tools:targetApi="31">
         <activity
-            android:name=".HomeCompany"
+            android:name=".Menu"
             android:exported="false"
-            android:label="@string/title_activity_home_company" />
+            android:label="@string/title_activity_menu" />
+        <activity
+            android:name=".HomeCompany"
+            android:label="HomeCompany"
+            android:exported="false">
+        </activity>
+
+
+
         <activity
             android:name=".HomeClient"
             android:exported="false"

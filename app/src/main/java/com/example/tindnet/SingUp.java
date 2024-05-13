@@ -76,7 +76,7 @@ public class SingUp extends AppCompatActivity {
                                             // Verificar el tipo de cuenta y dirigir al usuario a la actividad correspondiente
                                             if (tipo.equals("cliente")) {
                                                 startActivity(new Intent(SingUp.this, HomeClient.class));
-                                            } else if (tipo.equals("empresa")) {
+                                            } else if (tipo.equals("empresa" )) {
                                                 startActivity(new Intent(SingUp.this, HomeCompany.class));
                                             }
                                             finish();

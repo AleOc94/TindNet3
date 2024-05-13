@@ -20,6 +20,72 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/tindnet_1" />
 
+        <!-- activity_empresa.xml -->
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Campo para editar el nombre de la empresa -->
+            <EditText
+                android:id="@+id/editTextCompanyName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre de la empresa"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="250dp"
+                android:fontFamily="@font/zen_dots"
+                android:textSize="16sp"/>
+
+            <!-- Campo para editar la descripción de la empresa -->
+            <EditText
+                android:id="@+id/editTextCompanyDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextCompanyName"
+                android:hint="Descripción de la empresa" />
+
+            <!-- Botón para seleccionar imágenes -->
+            <Button
+                android:id="@+id/buttonSelectImages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextCompanyDescription"
+                android:text="Seleccionar imágenes"
+                android:onClick="selectImages" />
+
+            <!-- Botón para subir las imágenes y la información -->
+            <Button
+                android:id="@+id/buttonUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buttonSelectImages"
+                android:text="Subir"
+                android:onClick="uploadData" />
+
+        </RelativeLayout>
+
     </RelativeLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <fragment
+        android:id="@+id/nav_host_fragment_activity_menu"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

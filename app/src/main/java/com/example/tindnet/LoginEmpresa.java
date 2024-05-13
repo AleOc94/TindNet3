@@ -22,9 +22,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginEmpresa extends AppCompatActivity {
-    private static final String TAG="LoginEmpresa";
+    private static final String TAG = "LoginEmpresa";
     private EditText editTextName, editTextEmail, editTextPassword, editTextNif;
     private FirebaseAuth mAuth;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +72,7 @@ public class LoginEmpresa extends AppCompatActivity {
         usersRef.child("email").setValue(email);
         usersRef.child("tipo").setValue("empresa"); // Añadir el tipo de usuario como "cliente"
     }
+
     private void createUserWithEmailAndPassword(String email, String password) {
         // Verificar si la contraseña cumple con los requisitos
         if (password.length() < 6 || password.length() > 20) {
@@ -139,6 +141,7 @@ public class LoginEmpresa extends AppCompatActivity {
             }
         });
     }
+
     private void updateUI(FirebaseUser user) {
 // Aquí puedes actualizar la interfaz de usuario según el estado de autenticación
 // Por ejemplo, puedes redirigir al usuario a otra actividad después de que haya iniciado sesión correctamente
@@ -148,12 +151,13 @@ public class LoginEmpresa extends AppCompatActivity {
             finish();
         }
     }
+
     @Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
+        if (currentUser != null) {
             currentUser.reload();
         }
     }
