@@ -23,4 +23,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent); // Iniciar la actividad
         }
 
+    public void abrirSingUp(View view) {
+        // Crear un Intent para abrir la actividad de la página de login
+        Intent intent = new Intent(this, SingUp.class);
+        startActivity(intent); // Iniciar la actividad
+    }
+
     }
