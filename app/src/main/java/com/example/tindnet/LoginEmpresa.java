@@ -22,10 +22,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginEmpresa extends AppCompatActivity {
-    private static final String TAG = "LoginEmpresa";
+    private static final String TAG="LoginEmpresa";
     private EditText editTextName, editTextEmail, editTextPassword, editTextNif;
     private FirebaseAuth mAuth;
-
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,25 +53,25 @@ public class LoginEmpresa extends AppCompatActivity {
 
                 // Llamada al método createUserWithEmailAndPassword con los datos obtenidos
                 createUserWithEmailAndPassword(email, password);
-                guardarDatosEmpresaEnFirebase(name, email);
+                guardarDatosEmpresaEnFirebase(name, email, nif);
 
 
             }
         });
     }
 
-    private void guardarDatosEmpresaEnFirebase(String nombre, String email) {
+    private void guardarDatosEmpresaEnFirebase(String name, String email, String nif) {
         // Después de registrar al cliente exitosamente
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String userId = user.getUid();
 
         // Guarda los datos del cliente en la base de datos
         DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("users").child(userId);
-        usersRef.child("nombre").setValue(nombre);
+        usersRef.child("name").setValue(name);
+        usersRef.child("nif").setValue(nif);
         usersRef.child("email").setValue(email);
         usersRef.child("tipo").setValue("empresa"); // Añadir el tipo de usuario como "cliente"
     }
-
     private void createUserWithEmailAndPassword(String email, String password) {
         // Verificar si la contraseña cumple con los requisitos
         if (password.length() < 6 || password.length() > 20) {
@@ -141,7 +140,6 @@ public class LoginEmpresa extends AppCompatActivity {
             }
         });
     }
-
     private void updateUI(FirebaseUser user) {
 // Aquí puedes actualizar la interfaz de usuario según el estado de autenticación
 // Por ejemplo, puedes redirigir al usuario a otra actividad después de que haya iniciado sesión correctamente
@@ -151,13 +149,12 @@ public class LoginEmpresa extends AppCompatActivity {
             finish();
         }
     }
-
     @Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
+        if(currentUser != null){
             currentUser.reload();
         }
     }
